@@ -65,7 +65,7 @@ const GamePage = () => {
                             {isFullscreen ? "Exit Fullscreen" : "Fullscreen"}
                         </button>
                         <iframe
-                            src={game["Game URL"] + `/?gd_sdk_referrer_url=${import.meta.env.VITE_BASE_URL}`}
+                            src={game["Game URL"] + `/?gd_sdk_referrer_url=${import.meta.env.VITE_BASE_URL}${game._id}`}
                             className="w-full h-full"
                             frameBorder="0"
                             allowFullScreen
