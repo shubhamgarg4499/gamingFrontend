@@ -65,7 +65,7 @@ const GamePage = () => {
                             {isFullscreen ? "Exit Fullscreen" : "Fullscreen"}
                         </button>
                         <iframe
-                            src={`https://html5.gamedistribution.com/0ab5e8c3851e4d1e9515e3571ace4709/`}
+                            src={`${game["Game URL"]}/?gd_sdk_referrer_url=https://cloudgame.netlify.app/${game._id}`}
                             className="w-full h-full"
                             frameBorder="0"
                             allowFullScreen
