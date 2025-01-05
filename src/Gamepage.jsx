@@ -51,7 +51,7 @@ const GamePage = () => {
 
     return (
         game ? (
-            <div className="min-h-screen bg-gray-900 text-white p-6 flex">
+            <div className="min-h-screen bg-gray-900 text-white p-6 lg:flex">
                 {/* Game Section */}
                 <div className="flex-1 pr-4">
                     {/* Game Window */}
@@ -88,7 +88,7 @@ const GamePage = () => {
                 </div>
 
                 {/* Related Games Section */}
-                <aside className="w-80 bg-gray-800 p-4 rounded-lg shadow-lg">
+                <aside className="lg:w-80 md:w-1/2 w-full mx-auto md:mb-4 my-3 bg-gray-800 p-4 rounded-lg shadow-lg">
                     <h2 className="text-xl font-bold mb-4">Related Games</h2>
                     <div className="space-y-4">
                         {relatedGames.map((relatedGame) => (
