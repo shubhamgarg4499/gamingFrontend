@@ -10,6 +10,7 @@ import AboutUs from './About';
 import PrivacyPolicy from './Privacy';
 import ContactUs from './Contact';
 import { ToastContainer } from 'react-toastify';
+import Home from './Home';
 // const Provider = RouterProvider
 createRoot(document.getElementById('root')).render(
   // const routing = createBrowserRouter(Br)
@@ -21,7 +22,8 @@ createRoot(document.getElementById('root')).render(
     <Router>
       <Routes>
         <Route path="/" element={<Ooutlet />} >
-          <Route path='/' element={<App />} />
+          <Route path='/' element={<Home />} />
+          {/* <Route path='/home' element={<Home />} /> */}
           <Route path='/about' element={<AboutUs />} />
           <Route path='/policy' element={<PrivacyPolicy />} />
           <Route path='/contact-us' element={<ContactUs />} />

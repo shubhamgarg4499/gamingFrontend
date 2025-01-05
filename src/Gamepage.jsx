@@ -11,10 +11,11 @@ const GamePage = () => {
 
     useEffect(() => {
         axios
-            .get(`${import.meta.env.VITE_BASE_URL}/getgameById/`, { params: { id } })
+            .get(`${import.meta.env.VITE_BASE_URL}/getgameById`, { params: { id } })
             .then((res) => {
                 setGame(res.data);
-                fetchRelatedGames(res.data.Genres[0]);
+                // console.log(res);
+                fetchRelatedGames(res.data.category);
             })
             .catch((err) => console.error(err));
     }, [id]);
@@ -65,7 +66,7 @@ const GamePage = () => {
                             {isFullscreen ? "Exit Fullscreen" : "Fullscreen"}
                         </button>
                         <iframe
-                            src={`${game["Game URL"]}/?gd_sdk_referrer_url=https://cloudgame.netlify.app/${game._id}`}
+                            src={`${game.url}/?gd_sdk_referrer_url=https://cloudgame.netlify.app/${game._id}`}
                             className="w-full h-full"
                             frameBorder="0"
                             allowFullScreen
@@ -75,9 +76,9 @@ const GamePage = () => {
 
                     {/* Game Details */}
                     <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-                        <h1 className="text-2xl font-bold mb-2">{game.Title}</h1>
-                        <p className="text-gray-300 mb-4">{game.Description}</p>
-                        <h2 className="text-lg font-semibold mb-2">{game.Instructions}</h2>
+                        <h1 className="text-2xl font-bold mb-2">{game.title}</h1>
+                        <p className="text-gray-300 mb-4">{game.description}</p>
+                        <h2 className="text-lg font-semibold mb-2">{game.instructions}</h2>
                         {/* <ul className="list-disc list-inside text-gray-400">
                             {game.Tips?.map((tip, index) => (
                                 <li key={index}>{tip}</li>
@@ -97,12 +98,12 @@ const GamePage = () => {
                                 className="block bg-gray-700 hover:bg-gray-600 rounded-lg overflow-hidden shadow-md transition-all"
                             >
                                 <img
-                                    src={relatedGame.Assets[0]}
-                                    alt={relatedGame.Title}
+                                    src={relatedGame.thumb}
+                                    alt={relatedGame.title}
                                     className="w-full h-40 object-cover"
                                 />
                                 <div className="p-4">
-                                    <h3 className="text-lg font-bold truncate">{relatedGame.Title}</h3>
+                                    <h3 className="text-lg font-bold truncate">{relatedGame.title}</h3>
                                 </div>
                             </Link>
                         ))}

@@ -40,12 +40,6 @@ const App = () => {
         const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/getgames?page=${page}&category=${selectedCategory}`); // Replace with actual API endpoint
         setGames(response.data);
 
-        // Extract unique categories from games
-        // const uniqueCategories = [
-        //   "All",
-        //   ...new Set(response.data.map((game) => game.Genres).flat()),
-        // ];
-        // setCategories(uniqueCategories);
       } catch (error) {
         console.error("Error fetching games data:", error);
       }
