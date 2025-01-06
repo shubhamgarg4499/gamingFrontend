@@ -67,7 +67,7 @@ const GameDistributionPage = () => {
                         </button>
                         <iframe
                             // src={`${game["Game URL"]}/?gd_sdk_referrer_url=https://cloudgame.netlify.app/${game._id}`}
-                            src={`https://embed.gamedistribution.com/?url=https://html5.gamedistribution.com/${game["Game URL"]}/&width=${game.Width}&height=${game.Height}&language=es&gdpr-tracking=1&gdpr-targeting=1&gd_sdk_referrer_url=https://cloudgame.netlify.app/${game._id}`}
+                            src={`https://embed.gamedistribution.com/?url=${game["Game URL"]}/&width=${game.Width}&height=${game.Height}&language=es&gdpr-tracking=1&gdpr-targeting=1&gd_sdk_referrer_url=https://cloudgame.netlify.app/${game._id}`}
                             className="w-full h-full"
                             frameBorder="0"
                             allowFullScreen
